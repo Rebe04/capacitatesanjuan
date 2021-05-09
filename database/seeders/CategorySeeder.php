@@ -19,7 +19,7 @@ class CategorySeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'iseño web'
+            'name' => 'Diseño web'
         ]);
 
         Category::create([
