@@ -9,6 +9,10 @@ class Lesson extends Model
 {
     use HasFactory;
 
+    public function getCompletedAttribute(){
+        return $this->users->contains(auth()->user()->id);
+    }
+
     protected $guarded = ['id'];
 
     //Relación uno a uno
