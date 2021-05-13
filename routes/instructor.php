@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\InstructorCourses;
 
-Route::get('instructor', function () {
-    return "hola soy un instructor";
-});
+Route::redirect('', 'instructor/courses');
+
+Route::get('courses', InstructorCourses::class)->name('courses.index');
