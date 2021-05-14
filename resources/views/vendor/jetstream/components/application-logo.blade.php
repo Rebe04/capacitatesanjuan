@@ -1,1 +1,1 @@
-<img src="vendor/adminlte/dist/img/Icono.png" alt="logo">
+<img src="{{Storage::url('img/Icono.png')}}" alt="logo">

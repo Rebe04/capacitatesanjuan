@@ -2,11 +2,18 @@
 @section('title', 'Capacitate San Juan')
 
 @section('content_header')
-    <h1>Capacitate San Juan</h1>
+    <h1>Crear nuevo rol</h1>
 @stop
 
 @section('content')
-    <p>Bienvenido al panel de control.</p>
+<div class="card">
+    <div class="card-body">
+        {!! Form::open(['route' => 'admin.roles.store']) !!}
+            @include('admin.roles.partials.form')
+                {!! Form::submit('Crear rol', ['class' => 'btn btn-primary mt-2']) !!}
+        {!! Form::close() !!}
+    </div>
+</div>
 @stop
 
 @section('css')
