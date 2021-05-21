@@ -11,7 +11,7 @@
             <div class="card-body bg-gray-100">
                 @if ($section->id == $item->id)
                     <form wire:submit.prevent="update">
-                        <input wire:model="section.name" type="text" class="border-none rounded w-full" placeholder="Ingrese el nombre de la sección">
+                        <input wire:model="section.name" type="text" class="form-input w-full" placeholder="Ingrese el nombre de la sección">
                         @error('section.name')
                             <span class="text-xs text-red-500">{{$message}}</span>
                         @enderror
@@ -24,6 +24,9 @@
                         <i class="fas fa-eraser cursor-pointer text-red-500" wire:click="destroy( {{$item}} )"></i>
                     </div>
                 </header>
+                <div>
+                    @livewire('instructor.courses-lesson', ['section' => $item], key($item->id))
+                </div>
                 @endif
             </div>
         </article>
@@ -38,7 +41,7 @@
             <div class="card-body bg-gray-100">
                 <h1 class="text-xl font-bold mb-4">Agregar nueva sección</h1>
                 <div class="mb-4">
-                    <input wire:model="name" type="text" class="border-none rounded w-full" placeholder="Escriba el nombre de la sección">
+                    <input wire:model="name" type="text" class="form-input w-full" placeholder="Escriba el nombre de la sección">
                     @error('name')
                         <span class="text-xs text-red-500">{{$message}}</span>
                     @enderror

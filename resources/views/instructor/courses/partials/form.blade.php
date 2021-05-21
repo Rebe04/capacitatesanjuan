@@ -8,7 +8,7 @@
 
 <div class="mb-4">
     {!! Form::label('slug', 'Slug del Curso') !!}
-    {!! Form::text('slug', null, ['readonly' => 'readonly', 'class' => 'form-input block w-full mt-1 rounded-lg' . ($errors->has('slug') ? ' border-red-400' : '')]) !!}
+    {!! Form::text('slug', null, ['readonly' => 'readonly', 'class' => 'form-input w-full mt-1' . ($errors->has('slug') ? ' border-red-400' : '')]) !!}
     @error('slug')
         <strong class="text-xs text-red-600"> {{$message}} </strong>
     @enderror
