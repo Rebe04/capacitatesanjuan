@@ -75,30 +75,27 @@
                                 </div>
                                 <div class="text-sm text-gray-500">Valoraciones del curso</div>
                             </td>
-                            @switch($course->status)
-                                @case(1)
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
-                                    Borrador
-                                    </span>
-                                </td>
+                            <td class="px-6 py-4 whitespace-nowrap">
+                                @switch($course->status)
+                                    @case(1)
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800">
+                                        Borrador
+                                        </span>
+                                        @break
+                                    @case(2)
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
+                                        Revisión
+                                        </span>
+                                        @break
+                                    @case(3)
+                                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
+                                        Publicado
+                                        </span>
                                     @break
-                                @case(2)
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-yellow-100 text-yellow-800">
-                                    Revisión
-                                    </span>
-                                    @break
-                                @case(3)
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">
-                                    Publicado
-                                    </span>
-                                @break
-                                @default
-                                    
-                            @endswitch
-                            
+                                    @default
+                                        
+                                @endswitch
+                            </td>
                             <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
                                 <a href=" {{route('instructor.courses.edit', $course)}} " class="text-indigo-600 hover:text-indigo-900">Edit</a>
                             </td>
