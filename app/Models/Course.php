@@ -41,6 +41,12 @@ class Course extends Model
         return "slug";
     }
 
+    //Relación uno a uno
+
+    public function observation(){
+        return $this->hasOne('App\Models\Observation');
+    }
+
     //Relación Uno a Muchos Inversa
 
     public function teacher(){
